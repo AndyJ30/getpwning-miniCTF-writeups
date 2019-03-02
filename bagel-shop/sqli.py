@@ -313,7 +313,7 @@ def main():
     
     mysqli = MySqli(checkSuccess)
 
-    print(findFlag())
+    print(f"Flag is: {findFlag()}")
 
     #print(serverInfo())
     #bagels = mysqli.dumpTable('bageldb','bagels')
